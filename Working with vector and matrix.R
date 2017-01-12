@@ -126,9 +126,14 @@ typeof(vector3)
 matrix1 = rbind(vector1,vector2,vector3)
 matrix1
 
+# Transponse of the matrix
+t(matrix)
+
+
 #check the type of the matrix
 # Obviously a character matrix due to type casting limitaitons/rules
 typeof(matrix1)
+
 
 # create a matrix by column binding
 # similiar observation as that of rowbind
@@ -159,6 +164,23 @@ rownames(matrix4)
 colnames(matrix4)
 colnames(matrix4) =  c('col1','col2','col3','col4','col5', 'col6')
 matrix4
+
+# Reading the values using the names
+# the result is all matrix
+matrix4
+matrix4[,1:2]
+matrix4[,c("col5","col6")]
+matrix4[1:2,]
+matrix4[c("vector3","vector1"),]
+matrix4[c("vector3","vector1"), c("col5","col6")]
+
+# IMPORTANT: In below case the retirn is not a matrix but a vector because R guesses that we look for vector
+matrix4[1,]
+is.matrix(matrix4[1,])
+
+# Below code will convert the vector to matirx to get a consistant behavior of matrix
+# IMPORTANT: Using a drop to maintain consistancy of using the [] brackets
+matrix4[1,,drop=F]
 
 # to remove the names just set them to NULL 
 rownames(matrix4) = NULL
