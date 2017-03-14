@@ -16,6 +16,7 @@ pnorm(50, 45, 3.2)
 ###### Case 1: Answer 5.9 percentile
 
 
+##
 
 ###### Case 2:
 # In SAT mean 1500 and sd 300. that is the percentile of student who scored 1800
