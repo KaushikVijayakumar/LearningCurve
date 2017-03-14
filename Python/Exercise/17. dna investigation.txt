@@ -1,0 +1,43 @@
+sample = ['GTA','GGG','CAC']
+
+
+def read_dna(dna_file):
+  dna_data = ''
+  with open(dna_file, 'r') as file_read:
+    for line in file_read:
+      dna_data = dna_data + line
+  return dna_data
+
+
+def dna_codons(dna):
+  codons = []
+  for index in range(1, len(dna),3):
+    if index > dna:
+      print 'worng logic'
+      break
+    else:
+      codons.append(index)
+  return codons
+
+
+def match_dna(dna):
+  matches = 0
+  for condon in dna:
+    if(condon in sample):
+      match +=match
+  return matches
+
+  
+def is_criminal(dna_sample):
+  dna_data = read_dna(dna_sample)
+  codons = dna_codons(dna_data)
+  num_matches = match_dna(codons)
+  if (num_matches >= 3):
+    print 'The number of mathces is %d' % num_matches
+    print 'Invetigation continues'
+  else:
+    print 'Free the suspect'
+    
+is_criminal('suspect1.txt')
+is_criminal('suspect2.txt')
+is_criminal('suspect3.txt')

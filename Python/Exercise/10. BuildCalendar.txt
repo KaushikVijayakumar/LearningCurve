@@ -1,0 +1,63 @@
+"""Generate a calendar"""
+from time import strftime, sleep
+user_name = raw_input("What is your name?")
+
+calendar = {}
+
+def welcome():
+  print "Welcome to the calendar " + user_name
+  print 'The calendar is opening!'
+  sleep(1)
+  strftime("%A, %b %d")
+  strftime("%H:%M:%S")
+  print 'What would you like to do?'
+
+def start_calendar():
+  welcome()
+  start = True
+  while(start):
+    user_choice = raw_input('A to Add, U to Update, V to View, D to Delete, X to Exit:')
+    user_choice = user_choice.upper()
+    if(user_choice == 'V'):
+      if len(calendar.keys()) == 0:
+        print 'The Calendar is empty'
+      else:
+        print calendar
+    elif(user_choice == 'U'):
+      date  = raw_input("Which date")
+      update = raw_input("Enter the update:")
+      calendar[date] = update
+      print 'The update is successful'
+    elif(user_choice == 'A'):
+      event = raw_input("Add the event")
+      date = raw_input("Enter date MM/DD/YYYY")
+      if(len(date) > 10 or int(date[6:]) < int(strftime("%Y"))):
+        print 'Invalid date!!'
+        try_again = raw_inpit('Try again? Y for Yes and N for No')
+        if(try_again== 'Y'):
+          continue
+        else:
+          start = False
+      else:
+        calendar[date] = event
+    elif(user_choice == 'D'):
+      if len(calendar.keys()) == 0:
+        print 'The Calendar is empty'
+      else:
+        event = raw_input('What event?')
+        for date in calendar.keys():
+          if event == calendar[date]:
+            del(calendar[date])
+            print 'Calendar deleted successfully'
+          else:
+            print 'Incorrect event was entered'
+    elif(user_choice == 'X'):
+          start = False
+    else:
+          print 'Incorrect option entered. Exiting!'
+          start = False
+      
+  
+          
+          
+start_calendar()

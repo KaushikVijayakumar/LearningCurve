@@ -1,0 +1,40 @@
+# Exmaple 1 
+## note the zip key
+list_a = [3, 9, 17, 15, 19]
+list_b = [2, 4, 8, 10, 30, 40, 50, 60, 70, 80, 90]
+
+for a, b in zip(list_a, list_b):
+    # Add your code here!
+    if a > b:
+        print a
+    else:
+        print b
+
+
+#Example 2 - Prime
+def is_prime(x):
+    if x<2:
+        return False
+    if x==2:
+        return True
+    for n in range(2,x):
+        print n
+        if x%n == 0:
+            return False
+    else:
+        return True
+            
+
+#Example 3 - string reverse
+def reverse(text):
+    length = len(text)
+    reverse = ''
+    while(length>0):
+        print length
+        text[length - 1]
+        reverse = reverse + text[length - 1]
+        length = length - 1
+    else:
+        return reverse
+        
+    

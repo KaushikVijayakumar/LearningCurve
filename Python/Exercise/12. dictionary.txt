@@ -1,0 +1,70 @@
+# retriving the data
+my_dict = { 'name':'kaushik', 
+            'age': 29,
+            'place': 'chennai'
+    }
+    
+print my_dict.items()
+print my_dict.keys()
+print my_dict.values()
+
+
+
+
+# builing dictionary
+evens_to_50 = [i for i in range(51) if i % 2 == 0]
+print evens_to_50
+
+
+
+# build the even squares between 1 and 11
+even_squares = [i**2 for i in range(1,11) if i%2==0]
+
+# another example
+cubes_by_four = [i**3 for i in range(1,11) if i**3%4 == 0]
+print cubes_by_four
+
+# slice
+l = [i ** 2 for i in range(1, 11)]
+# Should be [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+print l[2:9:2]
+
+
+
+
+# print backwards using strinde
+my_list = range(1, 11)
+
+# Add your code below!
+backwards =my_list[::-1]
+
+
+
+
+
+
+
+
+
+
+# example:
+my_list = range(16)
+print filter(lambda x: x % 3 == 0, my_list)
+
+
+
+#example:
+languages = ["HTML", "JavaScript", "Python", "Ruby"]
+print filter(lambda x: x == 'Python', languages)
+
+
+#eg:
+squares = [x**2 for x in range(1,11)]
+print filter(lambda x: x >=30 and x<= 70, squares)
+
+
+
+
+
+

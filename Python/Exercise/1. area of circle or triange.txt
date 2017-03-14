@@ -1,0 +1,28 @@
+"""  calculate the area of a shape"""
+from math import pi
+from time import sleep
+from datetime import datetime
+now = datetime.now()
+print now
+print 'The calculation begins'
+print '%s/%s/%s %s:%s' % (now.month, now.day, now.year, now.hour, now.minute)
+sleep (1)
+hint = "Don't forget to include the correct units! \n"
+print hint
+option = raw_input ("Enter C for Circle and T for Triangle: ")
+print option
+if option == 'C':
+  radius = float(raw_input ("Enter the radius of the circle: "))   
+  area = pi * radius ** 2    
+  print "the pie is baking...."
+  sleep (1)
+  print ( "Area is :%.2f \n %s" % (area, hint))    
+elif option == 'T':
+  base = float(raw_input ("Enter the base of triange: "))   
+  height = float(raw_input ("Enter the height of triange: "))   
+  area = .5 * base * height
+  print "Uni Bi Tru ... "
+  sleep (1)
+  print ( "Area is :%.2f \n %s" % (area, hint))     	
+else:
+  print "The program will exit as you did not enter right option"

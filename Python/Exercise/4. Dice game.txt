@@ -1,0 +1,39 @@
+""" This is a game!"""
+
+from random import randint
+from time import sleep
+
+def get_user_guess():
+  user_guess= int(raw_input("Guess the value of dice"))
+  return user_guess
+
+def roll_dice(number_of_sides):
+    first_roll = randint(1,number_of_sides)
+    second_roll = randint(1,number_of_sides)
+    max_val = 2 * number_of_sides
+    print("The maximul values on the dice rolle is %s" % str(max_val))
+    sleep(1)
+    user_guess = get_user_guess()
+    if user_guess>max_val:
+      print("The guess is invalid as it is greater that %s" % str(max_val))
+      return False
+    else:
+      print("Rolling....")
+      sleep(2)
+      print ("The first roll is %d" % first_roll)
+      sleep(1)
+      print("The first roll is %d" % second_roll)
+      sleep(1)
+      total_roll = first_roll + second_roll
+      print("Result.... %d" % total_roll)
+      sleep(1) 
+      if(user_guess > total_roll):
+        print ("You the winner, I say!!")
+      else:
+        print ("You the sad loser, I say!!")       
+    	return True
+
+# Now roll the 6 sided die
+roll_dice (6)
+    
+        
