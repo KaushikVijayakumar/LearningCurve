@@ -249,5 +249,14 @@ round(Salary/Games,0)
 
 
 
+grades_variance = c(5, 1, 3, 9, 2)
+grades_variance
+var(grades_variance)
 
 
+
+grades_variance = c(0, 1, 6)
+grades_variance
+var(grades_variance)
+
+grades_variance([0, 1, 6])

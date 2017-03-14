@@ -67,7 +67,8 @@ sum(dbinom(60:100, size = 100, p= .56))
 
 ## Heights of 10 year-olds, regardless of gender, closely follow a normal distribution 
 # with mean 55 inches and standard deviation 6 inches. Which of the following is true?
-pnorm(, 55, 6)
+pnorm(20, 55, 6)
+
 
 # While it is often assumed that the probabilities of having a boy or a girl are the same, 
 # the actual probability of having a boy is slightly higher at 0.51. 
@@ -76,18 +77,30 @@ pnorm(, 55, 6)
 dbinom(2, size = 3, p = .51)
 
 
+# create one column of data
+weight = c(60, 72, 57, 90, 95, 72)
+
+#Now hypothisise that the average weight is 80
+# the probability is .4094 and hence it cannot be ignored
+t.test(weight, mu = 80)
 
 
-sum(dbinom(1:10, size = 10, p= .07))
+# Notes: Central limit theorem 
+# a.	The distribution of sample means is nearly normally distributed. Mean of sampling is approximately 
+#     equal to the population. The standard error is approximately equal to the SD of 
+#     population (if not population then the sampling) divided by the square root of sample size. 
+# b.	More the skew the more the sample that is required for central limit theorem to kick in. 
+#     because more samples will be needed to make the distribution look normal
+# c.	Immaterial of whether the population is skewed or normal, the sample means can be approximately normal
+#     if sufficient sample size is taken into consideration
 
+# IMPORTANT: pnorm takes the z score as an input and gives the value BELOW that value in the normal distribution
 
-
-sum(dbinom(35:3000000, size = 3000000, p = .00001))
-
-
-
-
-
+# Below is the % of values betten the z scopes in a norma distribution
+# In these cases the assmtion is the standarn normal dist of mean 0 and sd 1
+pnorm(1)  - pnorm(-1)  # 68.2
+pnorm(2)  - pnorm(-2)  # 95.4
+pnorm(3)  - pnorm(-3)  # 99.7
 
 
 
